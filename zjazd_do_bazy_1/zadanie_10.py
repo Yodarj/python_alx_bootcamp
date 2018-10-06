@@ -13,4 +13,4 @@ elif operacja == '/':
 elif operacja == '*':
     print('Wynik: ', liczba_1 * liczba_2)
 else:
-    print('błendny znak operacji')
+    print('błendnydasdasd znak operacji')
