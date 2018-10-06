@@ -10,6 +10,7 @@ print(f'''
 Cena za kg: {cenakg}
 Waga w kg: {waga}
 Należność: {naleznosc}
+tak tak tak tak
 ''')
 
 #print('a', 'b', sep='\n')
