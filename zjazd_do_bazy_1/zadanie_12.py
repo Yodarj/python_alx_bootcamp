@@ -11,3 +11,6 @@ while True:
     print('haha')
 
 # if 0 == if False == if '' == if lista, gdzie lista = [] == if słownik, gdzie słownik = {}
+
+for x in "Napis":
+    print(x)
