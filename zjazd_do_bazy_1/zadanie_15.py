@@ -23,7 +23,7 @@ print(f'Graczu, jesteś w punkcie {gracz_x} x {gracz_y}')
 
 print(f'Poruszasz się przy pomocy klawiszy w a s d')
 
-print(f'Musisz znaleźć skarb. Ale uważaj!!! Jeśli trafisz na smoka, ON CIĘ ZJEEE')
+print(f'Musisz znaleźć skarb. Ale uważaj!!! Jeśli zrobisz więcej niż 10 kroków pojawi się smok. Wtedy będzie buba! ON CIĘ ZJEEE')
 
 #print(f'skarb {skarb_x} x {skarb_y}')
 
@@ -78,3 +78,10 @@ while True:
         skarb_y = randint(1, 10)
         print("Skarb ma nowe położenie, osiołku")
         od_skarbu = abs(skarb_x - gracz_x) + abs(skarb_y - gracz_y)
+
+    # teraz dochodzi smok
+    if liczba_ruchow > 10:
+        print("Panie kolego, smok nadchodzi")
+        print(f'Znajduje się w miejscu {smok_x} x {smok_y}')
+        print(f'Ale cały czas się porusza!!')
+
