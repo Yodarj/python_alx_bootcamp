@@ -8,3 +8,5 @@ print(x[2:7])
 print(x[::3])
 print(x[::-2])
 
+a = ()
+print(a)
