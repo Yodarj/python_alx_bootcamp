@@ -7,8 +7,4 @@ y = napis.find('>')
 # print(y)
 
 napisn = napis[x+1:y]
-print(len(napisn))
-
-# lista_napisowa = [napis.find('<'):napis.find('>')]
-#
-# lista_napisowa.count()
+print(f'Długość wyrazu pomiędzy < i > to: {len(napisn)}')

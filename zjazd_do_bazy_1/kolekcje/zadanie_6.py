@@ -7,6 +7,3 @@ found = max(lista) in lista
 lista[y], lista[z] = lista[z], lista[y]
 
 print(lista)
-
-
-
