@@ -79,9 +79,13 @@ while True:
         print("Skarb ma nowe położenie, osiołku")
         od_skarbu = abs(skarb_x - gracz_x) + abs(skarb_y - gracz_y)
 
-    # teraz dochodzi smok
-    if liczba_ruchow > 10:
-        print("Panie kolego, smok nadchodzi")
-        print(f'Znajduje się w miejscu {smok_x} x {smok_y}')
-        print(f'Ale cały czas się porusza!!')
-
+    # # teraz dochodzi smok
+    # if liczba_ruchow > 10 and liczba_ruchow <=30:
+    #     print("Panie kolego, smok nadchodzi")
+    #     print(f'Znajduje się w miejscu {smok_x} x {smok_y}')
+    #     print(f'Ale zapierdala jak dziki!!')
+    # elif liczba_ruchow > 30:
+    #     print('Smok zaczyna zjadać planszę!!')
+    # elif liczba_ruchow > 31:
+    #     print('plansza zjedzona, łosiu')
+    #     exit()
