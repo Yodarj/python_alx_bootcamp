@@ -1,13 +1,16 @@
-def wiecej_niz(napis):
+def wiecej_niz(napis, x):
     napis.lower()
-    licznik = set()
+    licznik = {}
+    zbior = set()
     for litera in napis:
-        if litera in licznik:
-            licznik[litera] = licznik[litera] + 1
+        licznik[litera] = licznik.get(litera, 0) + 1
+    for i in licznik:
+        y = licznik[i]
+        if y > x:
+            zbior.add(i)
         else:
-            licznik[litera] = 1
-
-
+            continue
+    return zbior
 
 def test_wiecej_niz_dla_pustego_napisu():
     assert wiecej_niz('',0) == set()
@@ -16,3 +19,4 @@ def test_wiecej_niz_dla_niepustego_napisu():
     assert wiecej_niz('aaaaaaabbccccccd', 2) == {'a', 'c'}
 
 
+wiecej_niz('aaabbbcccmmmnnnsdoa', 2)
