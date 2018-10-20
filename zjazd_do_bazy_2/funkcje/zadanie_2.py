@@ -24,15 +24,34 @@
 
 # ------------------------------------------------------
 
+# def wiecej_niz(napis, z):
+#     licznik = {}
+#     wynik = set()
+#     for litera in napis:
+#         litera = litera.lower()
+#         licznik[litera] = licznik.get(litera, 0) + 1
+#     for key, value in licznik.items():
+#         if value > z:
+#             wynik.add(key)
+#     return wynik
+#
+# def test_wiecej_niz_dla_pustego_napisu():
+#     assert wiecej_niz('',0) == set()
+#
+# def test_wiecej_niz_dla_niepustego_napisu():
+#     assert wiecej_niz('aaaaaaabbccccccd', 2) == {'a', 'c'}
+#
+# def test_wiecej_niz_dla_male_duze_litery():
+#     assert wiecej_niz('aaaAAAbbccccd', 5) == {'a'}
+
+# -----------------------------------
+
 def wiecej_niz(napis, z):
-    licznik = {}
     wynik = set()
+    napis = napis.lower()
     for litera in napis:
-        litera = litera.lower()
-        licznik[litera] = licznik.get(litera, 0) + 1
-    for key, value in licznik.items():
-        if value > z:
-            wynik.add(key)
+        if napis.count(litera) > z:
+            wynik.add(litera)
     return wynik
 
 def test_wiecej_niz_dla_pustego_napisu():
@@ -43,4 +62,3 @@ def test_wiecej_niz_dla_niepustego_napisu():
 
 def test_wiecej_niz_dla_male_duze_litery():
     assert wiecej_niz('aaaAAAbbccccd', 5) == {'a'}
-
