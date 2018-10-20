@@ -46,13 +46,58 @@
 
 # -----------------------------------
 
+# def wiecej_niz(napis, z):
+#     wynik = set()
+#     napis = napis.lower()
+#     for litera in napis:
+#         if napis.count(litera) > z:
+#             wynik.add(litera)
+#     return wynik
+#
+# def test_wiecej_niz_dla_pustego_napisu():
+#     assert wiecej_niz('',0) == set()
+#
+# def test_wiecej_niz_dla_niepustego_napisu():
+#     assert wiecej_niz('aaaaaaabbccccccd', 2) == {'a', 'c'}
+#
+# def test_wiecej_niz_dla_male_duze_litery():
+#     assert wiecej_niz('aaaAAAbbccccd', 5) == {'a'}
+
+#-----------------------------------------------
+# def wiecej_niz(napis, z):
+#     napis = napis.lower()
+#     wynik = {znak for znak in napis if napis.count(znak) > z}
+#     return wynik
+#
+# def test_wiecej_niz_dla_pustego_napisu():
+#     assert wiecej_niz('',0) == set()
+#
+# def test_wiecej_niz_dla_niepustego_napisu():
+#     assert wiecej_niz('aaaaaaabbccccccd', 2) == {'a', 'c'}
+#
+# def test_wiecej_niz_dla_male_duze_litery():
+#     assert wiecej_niz('aaaAAAbbccccd', 5) == {'a'}
+#
+
+# ----------------------------------------------------------------------------
+#
+# def wiecej_niz(napis, z):
+#     napis = napis.lower()
+#     return {znak for znak in napis if napis.count(znak) > z}
+#
+# def test_wiecej_niz_dla_pustego_napisu():
+#     assert wiecej_niz('',0) == set()
+#
+# def test_wiecej_niz_dla_niepustego_napisu():
+#     assert wiecej_niz('aaaaaaabbccccccd', 2) == {'a', 'c'}
+#
+# def test_wiecej_niz_dla_male_duze_litery():
+#     assert wiecej_niz('aaaAAAbbccccd', 5) == {'a'}
+
+# ----------------------------------------------------------------------------
+
 def wiecej_niz(napis, z):
-    wynik = set()
-    napis = napis.lower()
-    for litera in napis:
-        if napis.count(litera) > z:
-            wynik.add(litera)
-    return wynik
+    return {znak for znak in napis if napis.lower().count(znak) > z}
 
 def test_wiecej_niz_dla_pustego_napisu():
     assert wiecej_niz('',0) == set()
