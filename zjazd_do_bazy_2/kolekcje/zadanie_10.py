@@ -6,8 +6,13 @@ dictionary = {}
 
 
 for i in napis:
-    napis.count(i)
-    dictionary[i] = dictionary.get(i, 0)
+    dictionary[i] = napis.count(i)
 
-print(dictionary)
+for cos in dictionary:
+    print(cos, dictionary[cos])
 #print(i, dictionary[i])
+
+#--------------------------------------------------
+
+napis = input('Podaj nazwę: ')
+dictionary = {}
