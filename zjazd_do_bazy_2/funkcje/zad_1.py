@@ -1,11 +1,21 @@
 def czy_jest_pierwsza(x):
-    for i in range(1,x):
-        if x % i == 0 and x == i:
-            print(False)
-            break
-        else:
-            print(True)
-            break
+    for dzielnik in range(2, x):
+        if x % dzielnik == 0:
+            return False
+    return True
 
 
-czy_jest_pierwsza(10)
+
+
+
+def test_czy_jest_pierwsza_dla_liczby_pierwszej():
+    assert czy_jest_pierwsza(7)
+    assert czy_jest_pierwsza(17)
+    assert czy_jest_pierwsza(23)
+
+def test_czy_jest_pierwsza_dla_liczby_nie_pierwszej():
+    assert not czy_jest_pierwsza(4)
+    assert not czy_jest_pierwsza(9)
+    assert not czy_jest_pierwsza(12)
+
+print(czy_jest_pierwsza(1))
