@@ -39,7 +39,10 @@ class Animal:
         cls.licznik += 1
 
 class LeniweZwierzeta(Animal):
-    pass
+
+    def idz(self):
+        self.stan = "Leży"
+        print("Chyba śnisz")
 
 #tworzenie instancji klasy
 azor = Animal("Canis Lupus")
@@ -51,6 +54,8 @@ print(rudolf.gatunek)
 
 print(Animal.licznik)
 
+azor.idz()
+print(azor.stan)
 garfield = LeniweZwierzeta("Felis Catus")
 
 #garfield.idz()
