@@ -6,13 +6,21 @@ class Employee:
         self.godziny = 0
 
     def register_time(self, godziny):
-        self.godziny = godziny
+        self.godziny += godziny
 
     def pay_salary(self):
-        if self.godziny <= 8:
-            return self.godziny * self.stawka
+        if self.godziny <= 8 and self.godziny > 0:
+            h_pracy = self.godziny
+            self.godziny = 0
+            return h_pracy * self.stawka
+        elif self.godziny > 8:
+            h_pracy = self.godziny
+            self.godziny = 0
+            return (8 * self.stawka) + ((h_pracy-8)*2*self.stawka)
         else:
-            return (8 * self.stawka) + ((self.godziny-8)*2*self.stawka)
+            self.godziny = 0
+            return 0
+
 
 
 
@@ -29,5 +37,13 @@ def test_employee_0h():
 
 def test_employee_10h():
     employee = Employee('Jan', 'Nowak', 100.0)
+    employee.register_time(10)
+    assert employee.pay_salary() == 1200.0
+
+def test_employee_calosc():
+    employee = Employee('Jan', 'Nowak', 100.0)
+    employee.register_time(5)
+    assert employee.pay_salary() == 500.0
+    assert employee.pay_salary() == 0
     employee.register_time(10)
     assert employee.pay_salary() == 1200.0
