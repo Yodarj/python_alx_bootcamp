@@ -20,21 +20,28 @@ class Basket:
         self.basket.update({product.nazwa:product.cena})
 
     def count_total_price(self):
-        pass
+        cena = self.ilosc * self.product.cena
+        return cena
 
     def generate_report(self):
         return f'''Produkty w koszyku:\n 
-        - {self.product.nazwa} {self.product.ID}, cena: {self.product.cena} PLN x {self.ilosc}\n
-        W sumie: 50.00'''
+    - {self.product.nazwa} ({self.product.ID}), cena: {self.product.cena} x {self.ilosc}\n
+    W sumie: {self.count_total_price()}'''
+
+basket = Basket()
+product = Product(1, "Woda", 10.99)
+basket.add_product(product, 5)
+
+print(basket.product.cena)
 
 
 def test_basket():
     basket = Basket()
-    product = Product(1, "Woda", 10.99)
+    product = Product(1, "Woda", 10)
     basket.add_product(product, 5)
 
-    #assert basket.count_total_price() == 50.00
+    assert basket.count_total_price() == 50.00
 
     assert basket.generate_report() == '''Produkty w koszyku:\n 
-    - Woda (1), cena: 10.99 x 5\n
-    W sumie: 50.00'''
+    - Woda (1), cena: 10 x 5\n
+    W sumie: 50'''
