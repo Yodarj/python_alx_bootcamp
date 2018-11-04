@@ -25,13 +25,14 @@ class Vector:
     def dlugosc(self):
         return ((self.x) ** 2 + (self.y) ** 2) ** 0.5
 
-    # def __eq__(self, second_vector):
-    #     if self.dlugosc() == second_vector.dlugosc() and self == second_vector:
-    #         return True
-    #     elif self.dlugosc() == second_vector.dlugosc() and self != second_vector:
-    #         return "Długości są równe, ale wektory różne"
-    #     else:
-    #         return False
+    def __eq__(self, second_vector):
+        return self.x == second_vector.x and self.y == second_vector.y
+
+    def __lt__(self, second_vector):
+        return self.dlugosc() < second_vector.dlugosc()
+
+    def __gt__(self, second_vector):
+        return self.dlugosc() > second_vector.dlugosc()
 
 
 def test_vector_all_fun():
@@ -47,3 +48,6 @@ def test_vector_all_fun():
     assert vector_5.x == -2
     assert vector_5.y == 4
     assert vector_1.dlugosc() == vector_2.dlugosc()
+    assert vector_1 != vector_2
+    assert vector_2 < vector_3
+    assert vector_5 > vector_3

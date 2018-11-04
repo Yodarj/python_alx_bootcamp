@@ -3,4 +3,4 @@ def silnia(liczba):
         return 1
     return liczba*silnia(liczba-1)
 
-print(silnia(900))
+print(silnia(666))
