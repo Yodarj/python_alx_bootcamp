@@ -1,12 +1,15 @@
 class Product:
 
-    def __init__(self, ID, name, price):
-        self.ID = ID
+    id = 1
+
+    def __init__(self, name, price):
+        self.id = Product.id
+        Product.id += 1
         self.name = name
         self.price = price
 
     def print_info(self):
-        return f'Produkt {self.name}, id: {self.ID}, cena: {self.price} PLN'
+        return f'Produkt {self.name}, id: {self.id}, cena: {self.price} PLN'
 
 class BasketEntry:
 
@@ -41,7 +44,7 @@ class Basket:
         text_1 = f'''Produkty w koszyku:\n'''
         text_2 = str()
         for entry in self.entries:
-            text_2 += f'''- {entry.product.name} ({entry.product.ID}), cena: {entry.product.price} x {entry.quantity}\n'''
+            text_2 += f'''- {entry.product.name} ({entry.product.id}), cena: {entry.product.price} x {entry.quantity}\n'''
         text_3 = f'''W sumie: {self.count_total_price()}'''
         return text_1 + text_2 + text_3
 
@@ -54,35 +57,35 @@ def test_create_basket():
 
 def test_add_product_to_basket():
     basket = Basket()
-    product = Product(1, "Woda", 10)
+    product = Product("Woda", 10)
     basket.add_product(product, 5)
     assert len(basket.entries) == 1
 
 def test_basket_count_total_price():
     basket = Basket()
-    product = Product(1, "Woda", 10)
+    product = Product("Woda", 10)
     basket.add_product(product, 5)
     assert basket.count_total_price() == 50.0
 
 def test_add_product_to_basket_x2():
     basket = Basket()
-    product_1 = Product(1, "Woda", 10)
-    product_2 = Product(2, "Wóda", 15)
+    product_1 = Product("Woda", 10)
+    product_2 = Product("Wóda", 15)
     basket.add_product(product_1, 5)
     basket.add_product(product_2, 10)
     assert len(basket.entries) == 2
 
 def test_basket_count_total_price_2():
     basket = Basket()
-    product_1 = Product(1, "Woda", 10)
-    product_2 = Product(2, "Wóda", 15)
+    product_1 = Product("Woda", 10)
+    product_2 = Product("Wóda", 15)
     basket.add_product(product_1, 5)
     basket.add_product(product_2, 10)
     assert basket.count_total_price() == 200.0
 
 def test_basket_generate_report():
     basket = Basket()
-    product = Product(1, "Woda", 10)
+    product = Product("Woda", 10)
     basket.add_product(product, 5)
     assert basket.generate_report() == '''Produkty w koszyku:
 - Woda (1), cena: 10 x 5
@@ -90,8 +93,8 @@ W sumie: 50'''
 
 def test_basket_generate_report_more():
     basket = Basket()
-    product_1 = Product(1, "Woda", 10)
-    product_2 = Product(2, "Wóda", 15)
+    product_1 = Product("Woda", 10)
+    product_2 = Product("Wóda", 15)
     basket.add_product(product_1, 5)
     basket.add_product(product_2, 10)
     assert basket.generate_report() == '''Produkty w koszyku:
