@@ -12,8 +12,9 @@ class Kalkulator:
         return self.var1 + self.var2 + var3
 
 calc = Kalkulator(2, 3)
-assert calc.policz_potege() == 8
-assert calc.policz_sume(4) == 9
+def test_calcu():
+    assert calc.policz_potege() == 8
+    assert calc.policz_sume(4) == 9
 
 print(calc.policz_potege())
 print(calc.policz_sume(4))
