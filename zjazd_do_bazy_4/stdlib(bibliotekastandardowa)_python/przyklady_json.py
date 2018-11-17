@@ -17,11 +17,11 @@ import json
 #
 # with open("meble.json", "w") as f:
 #     json.dump(meble, f)
-
-with open("meble.json") as f:
-    meble = json.load(f)
-    meble.append("taboret")
-    print(meble)
-
-with open ("meble.json", "w") as f:
-    json.dump(meble, f)
+#
+# with open("meble.json") as f:
+#     meble = json.load(f)
+#     meble.append("taboret")
+#     print(meble)
+#
+# with open ("meble.json", "w") as f:
+#     json.dump(meble, f)
