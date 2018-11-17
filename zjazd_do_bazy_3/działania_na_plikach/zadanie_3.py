@@ -23,12 +23,7 @@ except:
     print("Nie podałeś nazwy drugiego pliku. Plik będzie się zwał 'nowe_maile.txt'")
     nowa_nazwa = 'nowe_maile.txt'
 
-
-
 with open(f'dane/{nowa_nazwa}', 'w') as f:
     for i in sorted(full_list):
         f.write(i)
         f.write('\n')
-
-
-
