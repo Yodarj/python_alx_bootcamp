@@ -9,3 +9,6 @@ print(random.randrange(100))
 pets = ['cat', 'dog', 'fish', 'rat', 'fox', 'lion', 'iron', 'zion']
 
 print(random.choice(pets))
+
+print(random.shuffle(pets))
+print(pets)
