@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Poniżej widzisz wynik tego, co wybrałeś</h1>
+
+<table>
+    <tr><td>Operacja: {{ maf_det.func }}</td></tr>
+    <tr><td>Argument 1: {{ maf_det.l1 }}</td></tr>
+    <tr><td>Argument 2: {{ maf_det.l2 }}</td></tr>
+    <tr><td>Wynik: {{ wynik }}</td></tr>
+    <tr><td>Autor: {{ maf_det.user }}</td></tr>
+</table>
+
+{% endblock %}
